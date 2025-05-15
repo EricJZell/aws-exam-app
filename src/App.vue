@@ -121,9 +121,14 @@ const calculateScore = () => {
           <p>Time taken: {{ formatTime(timer) }}</p>
         </div>
         <div class="review">
-          <div v-for="(question, index) in questions" :key="index" class="question-review">
-            <p class="category">Category: {{ question.category }}</p>
-            <p class="question">{{ question.question }}</p>
+          <div v-for="(question, index) in questions" :key="index" class="question-container">
+            <p class="question">
+              <i v-if="userAnswers[index]" :class="{
+                'fas fa-circle-check text-success': userAnswers[index] === question.correctAnswer,
+                'fas fa-circle-xmark text-danger': userAnswers[index] !== question.correctAnswer
+              }"></i>&nbsp;&nbsp;
+              {{ question.question }}
+            </p>
             <p class="user-answer" :class="{ correct: userAnswers[index] === question.correctAnswer }">
               Your answer: {{ userAnswers[index] || 'Not answered' }}
             </p>
@@ -132,7 +137,7 @@ const calculateScore = () => {
           </div>
         </div>
         <button @click="examStarted = false; showResults = false; currentQuestionIndex = 0; userAnswers = {}; timer = 0" class="primary-button">
-          Start New Exam
+          Retake Exam
         </button>
       </div>
     </template>
@@ -191,6 +196,7 @@ body {
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
 }
 
 .question {
@@ -253,6 +259,16 @@ body {
 .score {
   font-size: 1.2rem;
   line-height: 1.6;
+}
+
+.text-success {
+  color: #28a745;
+  margin-left: 8px;
+}
+
+.text-danger {
+  color: #dc3545;
+  margin-left: 8px;
 }
 
 @media (max-width: 600px) {
