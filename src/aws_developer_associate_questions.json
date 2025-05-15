@@ -1,0 +1,23 @@
+[
+  {
+    "question": "Which AWS service is best suited to run event-driven code in response to changes in data within an S3 bucket?",
+    "options": ["Amazon EC2", "Amazon RDS", "AWS Lambda", "Amazon DynamoDB"],
+    "correctAnswer": "AWS Lambda",
+    "category": "Development with AWS Services",
+    "explanation": "AWS Lambda can be triggered by S3 events such as object creation or deletion, making it ideal for event-driven architectures."
+  },
+  {
+    "question": "What is the purpose of a dead-letter queue (DLQ) in an AWS Lambda function?",
+    "options": ["To increase the processing speed of Lambda", "To temporarily store successfully processed messages", "To store messages that failed processing for later analysis", "To back up all Lambda invocations"],
+    "correctAnswer": "To store messages that failed processing for later analysis",
+    "category": "Development with AWS Services",
+    "explanation": "DLQs store failed events from services like Lambda or SQS, allowing developers to inspect and debug issues."
+  },
+  {
+    "question": "Which AWS service provides a fully managed NoSQL database with built-in support for key-value and document data models?",
+    "options": ["Amazon Aurora", "Amazon Redshift", "Amazon DynamoDB", "Amazon RDS"],
+    "correctAnswer": "Amazon DynamoDB",
+    "category": "Development with AWS Services",
+    "explanation": "Amazon DynamoDB is a fully managed NoSQL database service that supports key-value and document data structures."
+  }
+]
