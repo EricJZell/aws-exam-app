@@ -170,7 +170,7 @@ const calculateScore = () => {
     </template>
   </div>
   <footer class="app-footer">
-    <p>Disclaimer: This practice material is AI-generated and is not affiliated with or endorsed by AWS. Questions may not reflect the actual content of the AWS Certified Developer Associate (DVA-C02) exam.</p>
+    <p>Disclaimer: This practice material is AI-generated and is not affiliated with or endorsed by AWS. Questions may not accurately reflect the actual content of the AWS Certified Developer Associate (DVA-C02) exam.</p>
   </footer>
 </template>
 
