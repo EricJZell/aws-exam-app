@@ -45,15 +45,33 @@ const submitExam = () => {
 
 const calculateScore = () => {
   let correct = 0
+  const categoryScores = {}
+
   Object.keys(userAnswers.value).forEach(index => {
+    const category = questions[index].category
+    if (!categoryScores[category]) {
+      categoryScores[category] = { correct: 0, total: 0 }
+    }
+    categoryScores[category].total++
+
     if (userAnswers.value[index] === questions[index].correctAnswer) {
       correct++
+      categoryScores[category].correct++
     }
   })
+
+  // Calculate percentages for each category
+  Object.keys(categoryScores).forEach(category => {
+    categoryScores[category].percentage = Math.round(
+      (categoryScores[category].correct / categoryScores[category].total) * 100
+    )
+  })
+
   return {
     correct,
     total: questions.length,
-    percentage: Math.round((correct / questions.length) * 100)
+    percentage: Math.round((correct / questions.length) * 100),
+    categoryScores
   }
 }
 </script>
@@ -97,7 +115,7 @@ const calculateScore = () => {
             ←
           </button>
           <button
-            v-if="currentQuestionIndex === questions.length - 1 && Object.keys(userAnswers).length === questions.length"
+            v-if="Object.keys(userAnswers).length === questions.length"
             @click="submitExam"
             class="primary-button"
           >
@@ -119,9 +137,15 @@ const calculateScore = () => {
       <div class="results">
         <h2>Exam Results</h2>
         <div class="score">
-          <p>Score: {{ calculateScore().correct }} / {{ calculateScore().total }}</p>
-          <p>Percentage: {{ calculateScore().percentage }}%</p>
+          <p>Overall Score: {{ calculateScore().correct }} / {{ calculateScore().total }}</p>
+          <p>Overall Percentage: {{ calculateScore().percentage }}%</p>
           <p>Time taken: {{ formatTime(timer) }}</p>
+          <div class="category-scores">
+            <h3>Scores by Category</h3>
+            <div v-for="(score, category) in calculateScore().categoryScores" :key="category" class="category-score">
+              <p>{{ category }}: {{ score.correct }}/{{ score.total }} ({{ score.percentage }}%)</p>
+            </div>
+          </div>
         </div>
         <div class="review">
           <div v-for="(question, index) in questions" :key="index" class="question-container">
@@ -222,6 +246,32 @@ body {
   justify-content: space-between;
   margin-bottom: 2rem;
   font-size: 1.1rem;
+}
+
+.score {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+}
+
+.category-scores {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.category-scores h3 {
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.category-score {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .question-container {
