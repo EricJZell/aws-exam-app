@@ -170,7 +170,7 @@ const calculateScore = () => {
     </template>
   </div>
   <footer class="app-footer">
-    <p>Disclaimer: This practice material is AI-generated and is not affiliated with or endorsed by AWS. Questions may not accurately reflect the actual content of the AWS Certified Developer Associate (DVA-C02) exam.</p>
+    <p>*This practice material is AI-generated and may not accurately reflect actual exam content*</p>
   </footer>
 </template>
 
@@ -367,6 +367,11 @@ body {
     flex-direction: column;
     gap: 0.5rem;
     text-align: center;
+  }
+
+  .app-footer {
+    padding: 0.5rem;
+    font-size: 0.8rem;
   }
 }
 </style>
