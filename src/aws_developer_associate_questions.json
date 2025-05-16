@@ -79,7 +79,7 @@
       "The task definition uses a wrong CPU value.",
       "ECS does not support ECR with Fargate."
     ],
-    "answer": "The ECS task role is missing the 'ecr:GetDownloadUrlForLayer' permission.",
+    "correctAnswer": "The ECS task role is missing the 'ecr:GetDownloadUrlForLayer' permission.",
     "category": "Troubleshooting and Optimization",
     "explanation": "When ECS Fargate tasks pull images from ECR, the task execution role must have permissions to access the image layers in ECR."
   },
@@ -115,7 +115,7 @@
       "Enable caching on API Gateway.",
       "Check the resource policy of the API."
     ],
-    "answer": "Check if the stage deployment was successful.",
+    "correctAnswer": "Check if the stage deployment was successful.",
     "category": "Troubleshooting and Optimization",
     "explanation": "A common issue is forgetting to deploy the new stage version after updating the API. Without deployment, the new configuration isn\u2019t live."
   },
@@ -187,7 +187,7 @@
       "The index.html file is missing.",
       "The S3 endpoint is not correct."
     ],
-    "answer": "The bucket policy does not allow public access.",
+    "correctAnswer": "The bucket policy does not allow public access.",
     "category": "Troubleshooting and Optimization",
     "explanation": "Static website hosting on S3 requires a bucket policy that allows public read access to the content."
   },
@@ -199,7 +199,7 @@
       "AWS CloudTrail",
       "Amazon X-Ray"
     ],
-    "answer": "Amazon RDS Performance Insights",
+    "correctAnswer": "Amazon RDS Performance Insights",
     "category": "Troubleshooting and Optimization",
     "explanation": "RDS Performance Insights provides detailed database performance metrics, including slow queries and wait events."
   },
@@ -271,7 +271,7 @@
       "Enable CloudTrail for API logging.",
       "Retry the request immediately in a loop."
     ],
-    "answer": "Request a service quota increase.",
+    "correctAnswer": "Request a service quota increase.",
     "category": "Troubleshooting and Optimization",
     "explanation": "This error occurs when the request rate exceeds the default service quota. A quota increase is the proper resolution."
   },
@@ -355,7 +355,7 @@
       "Enable X-Ray tracing to analyze latency sources.",
       "Update the Lambda timeout to a higher value."
     ],
-    "answer": "Enable X-Ray tracing to analyze latency sources.",
+    "correctAnswer": "Enable X-Ray tracing to analyze latency sources.",
     "category": "Troubleshooting and Optimization",
     "explanation": "AWS X-Ray helps identify which part of the request is causing latency, whether it's API Gateway, Lambda, or a downstream service."
   },
@@ -439,7 +439,7 @@
       "The Lambda function has reached its memory limit.",
       "The IAM role for the Lambda function is missing permissions to connect to RDS."
     ],
-    "answer": "The Lambda function is not in the same VPC as the RDS instance.",
+    "correctAnswer": "The Lambda function is not in the same VPC as the RDS instance.",
     "category": "Troubleshooting and Optimization",
     "explanation": "If a Lambda function needs to access an RDS database in a private subnet, it must be configured to run in the same VPC with appropriate subnet and security group settings."
   },
@@ -451,7 +451,7 @@
       "Switch to strongly consistent reads.",
       "Use DynamoDB Streams to retrieve data asynchronously."
     ],
-    "answer": "Use pagination to limit the amount of data retrieved.",
+    "correctAnswer": "Use pagination to limit the amount of data retrieved.",
     "category": "Troubleshooting and Optimization",
     "explanation": "Large queries on DynamoDB can take time. Using pagination reduces data size and prevents timeout errors."
   },
@@ -499,7 +499,7 @@
       "Increase the memory allocated to the function.",
       "Move to an EC2 instance instead of Lambda."
     ],
-    "answer": "Increase the memory allocated to the function.",
+    "correctAnswer": "Increase the memory allocated to the function.",
     "category": "Troubleshooting and Optimization",
     "explanation": "Allocating more memory to a Lambda function not only provides more memory but also increases available CPU and network throughput."
   },
@@ -667,7 +667,7 @@
       "Switch to FIFO queue type.",
       "Implement exponential backoff and retries."
     ],
-    "answer": "Implement exponential backoff and retries.",
+    "correctAnswer": "Implement exponential backoff and retries.",
     "category": "Troubleshooting and Optimization",
     "explanation": "Throttling can occur under high load; using exponential backoff is a recommended practice for handling such API errors."
   },
@@ -715,7 +715,7 @@
       "The Kinesis stream does not exist.",
       "The Lambda function's concurrency is set to zero."
     ],
-    "answer": "The Lambda function is not subscribed to the stream.",
+    "correctAnswer": "The Lambda function is not subscribed to the stream.",
     "category": "Troubleshooting and Optimization",
     "explanation": "If the event source mapping is not correctly configured, Lambda will not receive records from Kinesis."
   },
@@ -727,7 +727,7 @@
       "Verify the Lambda function's IAM role has correct permissions.",
       "Restart the Lambda function to refresh credentials."
     ],
-    "answer": "Verify the Lambda function's IAM role has correct permissions.",
+    "correctAnswer": "Verify the Lambda function's IAM role has correct permissions.",
     "category": "Troubleshooting and Optimization",
     "explanation": "If the IAM role associated with the Lambda function does not have the necessary permissions, S3 access will be denied."
   },
