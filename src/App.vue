@@ -59,11 +59,14 @@ const calculateScore = () => {
 </script>
 
 <template>
+  <a href="https://github.com/EricJZell/aws-exam-app" class="github-link" target="_blank" rel="noopener noreferrer" title="Go to source code">
+    <i class="fa-brands fa-github-square"></i>
+  </a>
   <div class="exam-app">
     <template v-if="!examStarted">
       <div class="welcome-screen">
-        <h1>AWS Developer Associate Practice Exam</h1>
-        <p>Test your knowledge with our practice questions</p>
+        <h1>AWS Certified Developer Associate (DVA-C02) Practice Exam</h1>
+        <p>Test your knowledge with 65 timed practice questions</p>
         <button @click="startExam" class="primary-button">Begin Exam</button>
       </div>
     </template>
@@ -142,6 +145,9 @@ const calculateScore = () => {
       </div>
     </template>
   </div>
+  <footer class="app-footer">
+    <p>Disclaimer: This practice material is AI-generated and is not affiliated with or endorsed by AWS. Questions may not reflect the actual content of the AWS Certified Developer Associate (DVA-C02) exam.</p>
+  </footer>
 </template>
 
 <style>
@@ -158,10 +164,37 @@ body {
   font-family: system-ui, -apple-system, sans-serif;
 }
 
+.github-link {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  font-size: 4rem;
+  color: var(--text-color);
+  z-index: 1000;
+}
+
+.github-link:hover {
+  color: var(--accent-color);
+}
+
 .exam-app {
   max-width: 800px;
   margin: 0 auto;
   padding: 2rem;
+  min-height: calc(100vh - 100px);
+}
+
+.app-footer {
+  text-align: center;
+  padding: 1rem;
+  color: #666;
+  font-size: 0.9rem;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--background-color);
+  border-top: 1px solid #eee;
 }
 
 .welcome-screen {

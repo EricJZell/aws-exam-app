@@ -1,422 +1,75 @@
 [
   {
-    "question": "Which AWS service is best suited to run event-driven code in response to changes in data within an S3 bucket?",
-    "options": ["Amazon EC2", "Amazon RDS", "AWS Lambda", "Amazon DynamoDB"],
-    "correctAnswer": "AWS Lambda",
-    "category": "Development with AWS Services",
-    "explanation": "AWS Lambda can be triggered by S3 events such as object creation or deletion, making it ideal for event-driven architectures."
-  },
-  {
-    "question": "What is the purpose of a dead-letter queue (DLQ) in an AWS Lambda function?",
-    "options": ["To increase the processing speed of Lambda", "To temporarily store successfully processed messages", "To store messages that failed processing for later analysis", "To back up all Lambda invocations"],
-    "correctAnswer": "To store messages that failed processing for later analysis",
-    "category": "Development with AWS Services",
-    "explanation": "DLQs store failed events from services like Lambda or SQS, allowing developers to inspect and debug issues."
-  },
-  {
-    "question": "Which AWS service provides a fully managed NoSQL database with built-in support for key-value and document data models?",
-    "options": ["Amazon Aurora", "Amazon Redshift", "Amazon DynamoDB", "Amazon RDS"],
-    "correctAnswer": "Amazon DynamoDB",
-    "category": "Development with AWS Services",
-    "explanation": "Amazon DynamoDB is a fully managed NoSQL database service that supports key-value and document data structures."
-  },
-  {
-    "question": "Which architectural pattern is characterized by components communicating via asynchronous messages or events?",
-    "options": ["Monolithic", "Microservices", "Event-driven", "Client-server"],
-    "correctAnswer": "Event-driven",
-    "category": "Development with AWS Services",
-    "explanation": "Event-driven architectures use asynchronous messages or events to decouple services and improve scalability."
-  },
-  {
-    "question": "What is the default consistency model for reads in Amazon DynamoDB?",
-    "options": ["Strongly consistent", "Eventually consistent", "Causal consistency", "Read-after-write consistency"],
-    "correctAnswer": "Eventually consistent",
-    "category": "Development with AWS Services",
-    "explanation": "By default, DynamoDB provides eventually consistent reads for better performance and scalability."
-  },
-  {
-    "question": "How does exponential backoff help in designing fault-tolerant systems?",
-    "options": ["By retrying immediately after failure", "By retrying at increasing intervals to reduce the load on the system", "By stopping retries after the first failure", "By sending all retries at once"],
-    "correctAnswer": "By retrying at increasing intervals to reduce the load on the system",
-    "category": "Development with AWS Services",
-    "explanation": "Exponential backoff reduces the retry rate over time, helping avoid overloading systems during outages."
-  },
-  {
-    "question": "What is the primary function of Amazon API Gateway?",
-    "options": ["To manage DynamoDB backups", "To provision EC2 instances", "To create and manage RESTful APIs", "To perform object recognition in images"],
-    "correctAnswer": "To create and manage RESTful APIs",
-    "category": "Development with AWS Services",
-    "explanation": "Amazon API Gateway enables developers to create, publish, and manage RESTful and WebSocket APIs at any scale."
-  },
-  {
-    "question": "Which AWS SDK method allows an application to put an item into a DynamoDB table?",
-    "options": ["putItem", "getItem", "scanTable", "insertRow"],
-    "correctAnswer": "putItem",
-    "category": "Development with AWS Services",
-    "explanation": "`putItem` is the API call used to insert or update an item in a DynamoDB table."
-  },
-  {
-    "question": "In AWS Lambda, what is a cold start?",
-    "options": ["The time it takes to deploy a new function", "The first invocation latency after a period of inactivity", "The delay before a function returns a response", "The backup process of Lambda logs"],
-    "correctAnswer": "The first invocation latency after a period of inactivity",
-    "category": "Development with AWS Services",
-    "explanation": "Cold starts refer to the latency introduced when Lambda initializes a new execution environment."
-  },
-  {
-    "question": "Which of the following services can trigger a Lambda function?",
-    "options": ["Amazon S3", "Amazon CloudFront", "Amazon Route 53", "Amazon QuickSight"],
-    "correctAnswer": "Amazon S3",
-    "category": "Development with AWS Services",
-    "explanation": "Amazon S3 can trigger Lambda functions in response to bucket events such as object creation."
-  },
-  {
-    "question": "Which feature of DynamoDB helps reduce read latency for frequently accessed data?",
-    "options": ["DAX (DynamoDB Accelerator)", "Provisioned throughput", "Auto Scaling", "Global Tables"],
-    "correctAnswer": "DAX (DynamoDB Accelerator)",
-    "category": "Development with AWS Services",
-    "explanation": "DAX is an in-memory caching service for DynamoDB that helps reduce read latency for frequently accessed data."
-  },
-  {
-    "question": "What happens if a Lambda function exceeds its timeout setting?",
-    "options": ["It retries the execution", "It throws a timeout exception", "It continues to run in background", "It automatically restarts"],
-    "correctAnswer": "It throws a timeout exception",
-    "category": "Development with AWS Services",
-    "explanation": "If a Lambda function exceeds its configured timeout, AWS terminates the function and throws a timeout exception."
-  },
-  {
-    "question": "Which type of API in API Gateway supports bidirectional communication?",
-    "options": ["REST API", "WebSocket API", "HTTP API", "GraphQL API"],
-    "correctAnswer": "WebSocket API",
-    "category": "Development with AWS Services",
-    "explanation": "WebSocket APIs support full-duplex communication channels, making them ideal for real-time use cases."
-  },
-  {
-    "question": "Which IAM policy feature ensures that a specific condition must be met for the policy to be effective?",
-    "options": ["Action", "Resource", "Condition", "Effect"],
-    "correctAnswer": "Condition",
-    "category": "Development with AWS Services",
-    "explanation": "The Condition element in IAM policies allows you to specify requirements that must be met for the policy to apply."
-  },
-  {
-    "question": "In DynamoDB, what is a partition key?",
-    "options": ["A field used for sorting results", "A secondary index", "The unique identifier used to distribute data", "A reserved attribute name"],
-    "correctAnswer": "The unique identifier used to distribute data",
-    "category": "Development with AWS Services",
-    "explanation": "The partition key determines the partition where the item is stored and must be unique if used alone."
-  },
-  {
-    "question": "Which AWS service can be used to coordinate microservices in a serverless workflow?",
-    "options": ["Amazon SWF", "AWS Step Functions", "Amazon SQS", "AWS CloudFormation"],
-    "correctAnswer": "AWS Step Functions",
-    "category": "Development with AWS Services",
-    "explanation": "AWS Step Functions allow you to coordinate distributed applications and microservices using workflows."
-  },
-  {
-    "question": "What is a common use case for Amazon S3 Event Notifications?",
-    "options": ["To monitor EC2 usage", "To trigger AWS Lambda functions", "To deploy code", "To configure IAM policies"],
-    "correctAnswer": "To trigger AWS Lambda functions",
-    "category": "Development with AWS Services",
-    "explanation": "S3 Event Notifications can be used to trigger AWS Lambda functions automatically upon object creation or deletion."
-  },
-  {
-    "question": "What is one way to avoid duplicate processing in an event-driven application?",
-    "options": ["Use EC2 instances instead of Lambda", "Track processed events using a DynamoDB table", "Disable retries", "Use larger batch sizes"],
-    "correctAnswer": "Track processed events using a DynamoDB table",
-    "category": "Development with AWS Services",
-    "explanation": "Tracking processed events using a DynamoDB table with unique IDs helps ensure idempotency in event-driven applications."
-  },
-  {
-    "question": "How can you reduce the latency of Lambda function initialization?",
-    "options": ["Use a smaller deployment package", "Increase memory allocation", "Use provisioned concurrency", "Add more environment variables"],
-    "correctAnswer": "Use provisioned concurrency",
-    "category": "Development with AWS Services",
-    "explanation": "Provisioned concurrency keeps Lambda functions initialized and ready to respond, reducing cold start latency."
-  },
-  {
-    "question": "Which method allows an application to retrieve all items from a DynamoDB table?",
-    "options": ["putItem", "scan", "query", "fetchAll"],
-    "correctAnswer": "scan",
-    "category": "Development with AWS Services",
-    "explanation": "The `scan` operation reads every item in a DynamoDB table, which is useful for full-table retrievals."
-  },
-  {
-    "question": "What is the benefit of using environment variables in AWS Lambda functions?",
-    "options": ["They improve function memory allocation", "They allow reuse of execution context", "They separate configuration from code", "They reduce cold start times"],
-    "correctAnswer": "They separate configuration from code",
-    "category": "Development with AWS Services",
-    "explanation": "Environment variables let you manage configuration settings outside of your code, making deployments more flexible."
-  },
-  {
-    "question": "Which AWS service provides user sign-up, sign-in, and access control for web and mobile apps?",
-    "options": ["AWS IAM", "Amazon Cognito", "AWS SSO", "AWS Shield"],
-    "correctAnswer": "Amazon Cognito",
-    "category": "Security",
-    "explanation": "Amazon Cognito provides authentication, authorization, and user management for web and mobile apps."
-  },
-  {
-    "question": "Which IAM entity is best used for granting short-term access to AWS resources?",
-    "options": ["IAM Role", "IAM Group", "IAM User", "IAM Policy"],
-    "correctAnswer": "IAM Role",
-    "category": "Security",
-    "explanation": "IAM roles are used to delegate access with temporary credentials, especially useful for federated users or services."
-  },
-  {
-    "question": "How can developers securely store API keys in AWS?",
-    "options": ["Store in plaintext in Lambda code", "Use Amazon S3", "Use AWS Secrets Manager", "Store in a local config file"],
-    "correctAnswer": "Use AWS Secrets Manager",
-    "category": "Security",
-    "explanation": "AWS Secrets Manager is designed for securely storing and managing access to secrets such as API keys."
-  },
-  {
-    "question": "Which feature of IAM allows you to restrict access based on IP addresses or request times?",
-    "options": ["Actions", "Resources", "Policy Conditions", "Policy Effects"],
-    "correctAnswer": "Policy Conditions",
-    "category": "Security",
-    "explanation": "Policy conditions let you control access based on factors like IP address, date, and MFA status."
-  },
-  {
-    "question": "What is the default behavior for IAM users in AWS?",
-    "options": ["Full access to all services", "No access until permissions are explicitly granted", "Read-only access", "Admin access to EC2"],
-    "correctAnswer": "No access until permissions are explicitly granted",
-    "category": "Security",
-    "explanation": "IAM users have no permissions by default. You must attach policies to grant access."
-  },
-  {
-    "question": "Which AWS service helps developers securely manage database credentials?",
-    "options": ["Amazon RDS", "AWS Secrets Manager", "Amazon CloudWatch", "Amazon S3"],
-    "correctAnswer": "AWS Secrets Manager",
-    "category": "Security",
-    "explanation": "Secrets Manager stores database credentials securely and can automatically rotate them."
-  },
-  {
     "question": "What is a benefit of using IAM roles instead of IAM users for EC2 instances?",
-    "options": ["Roles are cheaper", "Roles allow long-term access", "Roles avoid hardcoding credentials", "Roles support SSH login"],
+    "options": [
+      "Roles are cheaper",
+      "Roles allow long-term access",
+      "Roles avoid hardcoding credentials",
+      "Roles support SSH login"
+    ],
     "correctAnswer": "Roles avoid hardcoding credentials",
     "category": "Security",
     "explanation": "IAM roles provide temporary credentials that can be automatically rotated, improving security by avoiding static credentials."
   },
   {
-    "question": "What does the principle of least privilege mean?",
-    "options": ["Users should be denied all access by default", "Users should only be given permissions they need", "Admin users should have all permissions", "Roles should expire after 24 hours"],
-    "correctAnswer": "Users should only be given permissions they need",
-    "category": "Security",
-    "explanation": "The principle of least privilege helps reduce the attack surface by limiting access to only necessary permissions."
+    "question": "Which IAM policy feature ensures that a specific condition must be met for the policy to be effective?",
+    "options": [
+      "Action",
+      "Resource",
+      "Condition",
+      "Effect"
+    ],
+    "correctAnswer": "Condition",
+    "category": "Development with AWS Services",
+    "explanation": "The Condition element in IAM policies allows you to specify requirements that must be met for the policy to apply."
   },
   {
-    "question": "What mechanism can a Lambda function use to assume a role for accessing other AWS services?",
-    "options": ["Environment variables", "Static credentials", "Lambda execution role", "Custom policies"],
-    "correctAnswer": "Lambda execution role",
-    "category": "Security",
-    "explanation": "The Lambda execution role allows the function to securely access other AWS resources."
+    "question": "Which method allows an application to retrieve all items from a DynamoDB table?",
+    "options": [
+      "putItem",
+      "scan",
+      "query",
+      "fetchAll"
+    ],
+    "correctAnswer": "scan",
+    "category": "Development with AWS Services",
+    "explanation": "The `scan` operation reads every item in a DynamoDB table, which is useful for full-table retrievals."
   },
   {
-    "question": "How can you ensure that API Gateway endpoints require user authentication?",
-    "options": ["Enable CORS", "Attach a usage plan", "Use Cognito User Pools authorizer", "Enable CloudTrail logging"],
-    "correctAnswer": "Use Cognito User Pools authorizer",
-    "category": "Security",
-    "explanation": "API Gateway can integrate with Amazon Cognito User Pools to authenticate API requests."
-  },
-  {
-    "question": "Which tool allows centralized auditing of all AWS account activity?",
-    "options": ["AWS Config", "AWS GuardDuty", "AWS CloudTrail", "AWS IAM"],
-    "correctAnswer": "AWS CloudTrail",
-    "category": "Security",
-    "explanation": "AWS CloudTrail records all API calls for auditing and monitoring purposes."
-  },
-  {
-    "question": "Which service can automatically rotate secrets such as database credentials?",
-    "options": ["AWS Systems Manager Parameter Store", "Amazon Cognito", "AWS Secrets Manager", "AWS Config"],
-    "correctAnswer": "AWS Secrets Manager",
-    "category": "Security",
-    "explanation": "Secrets Manager supports automatic rotation of secrets, which enhances security and reduces operational burden."
-  },
-  {
-    "question": "How can you prevent a developer from accidentally deleting a production DynamoDB table?",
-    "options": ["Use resource tagging", "Enable CloudWatch logs", "Apply IAM policy with Deny action", "Enable logging in S3"],
-    "correctAnswer": "Apply IAM policy with Deny action",
-    "category": "Security",
-    "explanation": "You can explicitly deny delete actions in IAM policies to protect critical resources."
-  },
-  {
-    "question": "What type of credentials are provided by Amazon Cognito to authenticated users?",
-    "options": ["IAM user credentials", "Temporary AWS credentials", "Long-term access keys", "Static SSH keys"],
-    "correctAnswer": "Temporary AWS credentials",
-    "category": "Security",
-    "explanation": "Cognito can exchange identity tokens for temporary AWS credentials via roles with appropriate permissions."
-  },
-  {
-    "question": "Which AWS service allows secure storage of configuration data and secrets for EC2 and Lambda?",
-    "options": ["Amazon S3", "AWS Systems Manager Parameter Store", "Amazon RDS", "Amazon QuickSight"],
-    "correctAnswer": "AWS Systems Manager Parameter Store",
-    "category": "Security",
-    "explanation": "Parameter Store enables secure, hierarchical storage of configuration and secrets, with optional encryption."
-  },
-  {
-    "question": "What is the main purpose of Multi-Factor Authentication (MFA) in AWS?",
-    "options": ["To allow anonymous access", "To enable SSH access", "To increase security by requiring a second authentication factor", "To reduce API call latency"],
-    "correctAnswer": "To increase security by requiring a second authentication factor",
-    "category": "Security",
-    "explanation": "MFA adds an additional layer of security by requiring a time-based one-time password (TOTP) in addition to a username and password."
-  },
-  {
-    "question": "Which type of IAM policy should be used to define permissions for a specific user?",
-    "options": ["Inline policy", "Resource policy", "Group policy", "Service-linked role policy"],
-    "correctAnswer": "Inline policy",
-    "category": "Security",
-    "explanation": "Inline policies are directly attached to a single IAM user, group, or role and are often used for specific permissions."
-  },
-  {
-    "question": "Which AWS service provides a platform to deploy and manage applications without having to manage the underlying infrastructure?",
-    "options": ["AWS CloudFormation", "AWS CodePipeline", "AWS Elastic Beanstalk", "AWS SAM"],
-    "correctAnswer": "AWS Elastic Beanstalk",
-    "category": "Deployment",
-    "explanation": "AWS Elastic Beanstalk abstracts the infrastructure layer and lets developers deploy applications quickly using supported platforms."
-  },
-  {
-    "question": "What is the primary purpose of AWS CloudFormation?",
-    "options": ["Manage application versions", "Write and run Lambda functions", "Provision infrastructure as code", "Host static websites"],
-    "correctAnswer": "Provision infrastructure as code",
-    "category": "Deployment",
-    "explanation": "AWS CloudFormation allows you to define and provision infrastructure using code templates."
-  },
-  {
-    "question": "Which AWS service is best suited for building CI/CD pipelines?",
-    "options": ["AWS CodeDeploy", "AWS CloudFormation", "AWS CodePipeline", "AWS Elastic Beanstalk"],
-    "correctAnswer": "AWS CodePipeline",
-    "category": "Deployment",
-    "explanation": "AWS CodePipeline helps you build, test, and deploy your code every time there is a code change."
-  },
-  {
-    "question": "What is a key feature of AWS CodeDeploy?",
-    "options": ["Manage DNS routing", "Build Docker containers", "Deploy code to EC2, Lambda, and on-premises", "Launch EC2 Auto Scaling groups"],
-    "correctAnswer": "Deploy code to EC2, Lambda, and on-premises",
-    "category": "Deployment",
-    "explanation": "AWS CodeDeploy automates code deployments to various compute services including EC2, Lambda, and on-premises servers."
-  },
-  {
-    "question": "Which format does AWS SAM use for defining serverless applications?",
-    "options": ["JSON", "TOML", "YAML", "INI"],
-    "correctAnswer": "YAML",
-    "category": "Deployment",
-    "explanation": "AWS SAM templates are typically written in YAML, which is more human-readable for defining serverless infrastructure."
-  },
-  {
-    "question": "In AWS CodePipeline, what is a 'stage'?",
-    "options": ["An IAM role", "A type of Lambda function", "A step in your release process", "A version of your application"],
-    "correctAnswer": "A step in your release process",
-    "category": "Deployment",
-    "explanation": "A stage in CodePipeline represents a logical step in the CI/CD workflow, like source, build, test, or deploy."
-  },
-  {
-    "question": "What is the benefit of using 'blue/green deployments' in AWS Elastic Beanstalk?",
-    "options": ["Faster S3 uploads", "Improved DNS resolution", "Reduced deployment downtime", "Lower EC2 costs"],
-    "correctAnswer": "Reduced deployment downtime",
-    "category": "Deployment",
-    "explanation": "Blue/green deployments help reduce downtime and risk by running two environments and switching traffic between them."
-  },
-  {
-    "question": "How can AWS SAM help in deploying serverless applications?",
-    "options": ["It only builds static websites", "It provisions only RDS instances", "It simplifies definition and deployment of Lambda-based apps", "It enables container orchestration"],
-    "correctAnswer": "It simplifies definition and deployment of Lambda-based apps",
-    "category": "Deployment",
-    "explanation": "AWS SAM provides a simplified syntax for expressing serverless resources and deploying them using the SAM CLI."
-  },
-  {
-    "question": "Which AWS service can automatically rollback a failed deployment?",
-    "options": ["AWS CodePipeline", "AWS Elastic Beanstalk", "AWS CloudFormation", "AWS CodeDeploy"],
-    "correctAnswer": "AWS CodeDeploy",
-    "category": "Deployment",
-    "explanation": "CodeDeploy can monitor deployment health and automatically roll back in case of failure."
+    "question": "Which of the following services can trigger a Lambda function?",
+    "options": [
+      "Amazon S3",
+      "Amazon CloudFront",
+      "Amazon Route 53",
+      "Amazon QuickSight"
+    ],
+    "correctAnswer": "Amazon S3",
+    "category": "Development with AWS Services",
+    "explanation": "Amazon S3 can trigger Lambda functions in response to bucket events such as object creation."
   },
   {
     "question": "What is the main purpose of the 'sam deploy' command?",
-    "options": ["Run unit tests", "Push container images", "Deploy a serverless application", "List available AWS services"],
+    "options": [
+      "Run unit tests",
+      "Push container images",
+      "Deploy a serverless application",
+      "List available AWS services"
+    ],
     "correctAnswer": "Deploy a serverless application",
     "category": "Deployment",
     "explanation": "The 'sam deploy' command packages and deploys a serverless application to AWS."
   },
   {
-    "question": "Which AWS service helps in managing infrastructure using declarative templates?",
-    "options": ["AWS Elastic Beanstalk", "AWS CodeBuild", "AWS CloudFormation", "Amazon EC2"],
-    "correctAnswer": "AWS CloudFormation",
-    "category": "Deployment",
-    "explanation": "CloudFormation uses templates to define and provision AWS infrastructure in a consistent and repeatable way."
-  },
-  {
-    "question": "How can application versions be managed in AWS Elastic Beanstalk?",
-    "options": ["By using Lambda aliases", "By using S3 buckets", "By uploading and deploying new application versions", "By using EC2 Auto Scaling policies"],
-    "correctAnswer": "By uploading and deploying new application versions",
-    "category": "Deployment",
-    "explanation": "Elastic Beanstalk allows you to upload new versions of your app and deploy them to environments as needed."
-  },
-  {
-    "question": "Which service integrates with GitHub to trigger builds and deployments automatically?",
-    "options": ["Amazon EC2", "AWS CodePipeline", "Amazon CloudWatch", "AWS IAM"],
-    "correctAnswer": "AWS CodePipeline",
-    "category": "Deployment",
-    "explanation": "CodePipeline can connect to GitHub to trigger builds and deployments when new commits are pushed."
-  },
-  {
-    "question": "What is the role of AWS CodeBuild in a CI/CD pipeline?",
-    "options": ["Manage IAM policies", "Run build and test commands", "Deploy applications", "Provision infrastructure"],
-    "correctAnswer": "Run build and test commands",
-    "category": "Deployment",
-    "explanation": "CodeBuild compiles source code, runs tests, and produces artifacts for deployment."
-  },
-  {
-    "question": "Which AWS tool allows you to define your application and infrastructure in a single YAML template for serverless apps?",
-    "options": ["AWS CloudFormation", "AWS CodeDeploy", "AWS SAM", "AWS CodePipeline"],
-    "correctAnswer": "AWS SAM",
-    "category": "Deployment",
-    "explanation": "AWS SAM allows developers to define the serverless infrastructure and application logic in a single YAML template."
-  },
-  {
-    "question": "An application running on AWS Lambda is experiencing timeouts when trying to access an Amazon RDS database. What is the MOST likely cause?",
+    "question": "What type of credentials are provided by Amazon Cognito to authenticated users?",
     "options": [
-      "The Lambda function is not in the same VPC as the RDS instance.",
-      "The RDS instance is not publicly accessible.",
-      "The Lambda function has reached its memory limit.",
-      "The IAM role for the Lambda function is missing permissions to connect to RDS."
+      "IAM user credentials",
+      "Temporary AWS credentials",
+      "Long-term access keys",
+      "Static SSH keys"
     ],
-    "answer": "The Lambda function is not in the same VPC as the RDS instance.",
-    "category": "Troubleshooting and Optimization",
-    "explanation": "If a Lambda function needs to access an RDS database in a private subnet, it must be configured to run in the same VPC with appropriate subnet and security group settings."
-  },
-  {
-    "question": "A developer notices high latency in an Amazon API Gateway endpoint integrated with AWS Lambda. What should they check FIRST?",
-    "options": [
-      "Check if Lambda function has sufficient memory.",
-      "Check the API Gateway throttling settings.",
-      "Enable X-Ray tracing to analyze latency sources.",
-      "Update the Lambda timeout to a higher value."
-    ],
-    "answer": "Enable X-Ray tracing to analyze latency sources.",
-    "category": "Troubleshooting and Optimization",
-    "explanation": "AWS X-Ray helps identify which part of the request is causing latency, whether it's API Gateway, Lambda, or a downstream service."
-  },
-  {
-    "question": "An S3-hosted static website is returning a 403 Forbidden error when accessed. What is the MOST likely issue?",
-    "options": [
-      "The bucket is encrypted with SSE-S3.",
-      "The bucket policy does not allow public access.",
-      "The index.html file is missing.",
-      "The S3 endpoint is not correct."
-    ],
-    "answer": "The bucket policy does not allow public access.",
-    "category": "Troubleshooting and Optimization",
-    "explanation": "Static website hosting on S3 requires a bucket policy that allows public read access to the content."
-  },
-  {
-    "question": "A developer's Lambda function frequently times out when querying a DynamoDB table. What optimization should be applied?",
-    "options": [
-      "Increase provisioned read throughput.",
-      "Use pagination to limit the amount of data retrieved.",
-      "Switch to strongly consistent reads.",
-      "Use DynamoDB Streams to retrieve data asynchronously."
-    ],
-    "answer": "Use pagination to limit the amount of data retrieved.",
-    "category": "Troubleshooting and Optimization",
-    "explanation": "Large queries on DynamoDB can take time. Using pagination reduces data size and prevents timeout errors."
+    "correctAnswer": "Temporary AWS credentials",
+    "category": "Security",
+    "explanation": "Cognito can exchange identity tokens for temporary AWS credentials via roles with appropriate permissions."
   },
   {
     "question": "An ECS service using the Fargate launch type fails to pull the container image from Amazon ECR. What is the MOST likely cause?",
@@ -431,6 +84,114 @@
     "explanation": "When ECS Fargate tasks pull images from ECR, the task execution role must have permissions to access the image layers in ECR."
   },
   {
+    "question": "Which AWS service helps developers securely manage database credentials?",
+    "options": [
+      "Amazon RDS",
+      "AWS Secrets Manager",
+      "Amazon CloudWatch",
+      "Amazon S3"
+    ],
+    "correctAnswer": "AWS Secrets Manager",
+    "category": "Security",
+    "explanation": "Secrets Manager stores database credentials securely and can automatically rotate them."
+  },
+  {
+    "question": "Which service can automatically rotate secrets such as database credentials?",
+    "options": [
+      "AWS Systems Manager Parameter Store",
+      "Amazon Cognito",
+      "AWS Secrets Manager",
+      "AWS Config"
+    ],
+    "correctAnswer": "AWS Secrets Manager",
+    "category": "Security",
+    "explanation": "Secrets Manager supports automatic rotation of secrets, which enhances security and reduces operational burden."
+  },
+  {
+    "question": "After deploying a new version of an API Gateway, users are seeing 'Internal Server Error' responses. What should be checked FIRST?",
+    "options": [
+      "Check if the stage deployment was successful.",
+      "Check the Lambda function permissions.",
+      "Enable caching on API Gateway.",
+      "Check the resource policy of the API."
+    ],
+    "answer": "Check if the stage deployment was successful.",
+    "category": "Troubleshooting and Optimization",
+    "explanation": "A common issue is forgetting to deploy the new stage version after updating the API. Without deployment, the new configuration isn\u2019t live."
+  },
+  {
+    "question": "What is a key feature of AWS CodeDeploy?",
+    "options": [
+      "Manage DNS routing",
+      "Build Docker containers",
+      "Deploy code to EC2, Lambda, and on-premises",
+      "Launch EC2 Auto Scaling groups"
+    ],
+    "correctAnswer": "Deploy code to EC2, Lambda, and on-premises",
+    "category": "Deployment",
+    "explanation": "AWS CodeDeploy automates code deployments to various compute services including EC2, Lambda, and on-premises servers."
+  },
+  {
+    "question": "How can you prevent a developer from accidentally deleting a production DynamoDB table?",
+    "options": [
+      "Use resource tagging",
+      "Enable CloudWatch logs",
+      "Apply IAM policy with Deny action",
+      "Enable logging in S3"
+    ],
+    "correctAnswer": "Apply IAM policy with Deny action",
+    "category": "Security",
+    "explanation": "You can explicitly deny delete actions in IAM policies to protect critical resources."
+  },
+  {
+    "question": "Which type of IAM policy should be used to define permissions for a specific user?",
+    "options": [
+      "Inline policy",
+      "Resource policy",
+      "Group policy",
+      "Service-linked role policy"
+    ],
+    "correctAnswer": "Inline policy",
+    "category": "Security",
+    "explanation": "Inline policies are directly attached to a single IAM user, group, or role and are often used for specific permissions."
+  },
+  {
+    "question": "What is the benefit of using environment variables in AWS Lambda functions?",
+    "options": [
+      "They improve function memory allocation",
+      "They allow reuse of execution context",
+      "They separate configuration from code",
+      "They reduce cold start times"
+    ],
+    "correctAnswer": "They separate configuration from code",
+    "category": "Development with AWS Services",
+    "explanation": "Environment variables let you manage configuration settings outside of your code, making deployments more flexible."
+  },
+  {
+    "question": "Which architectural pattern is characterized by components communicating via asynchronous messages or events?",
+    "options": [
+      "Monolithic",
+      "Microservices",
+      "Event-driven",
+      "Client-server"
+    ],
+    "correctAnswer": "Event-driven",
+    "category": "Development with AWS Services",
+    "explanation": "Event-driven architectures use asynchronous messages or events to decouple services and improve scalability."
+  },
+  {
+    "question": "An S3-hosted static website is returning a 403 Forbidden error when accessed. What is the MOST likely issue?",
+    "options": [
+      "The bucket is encrypted with SSE-S3.",
+      "The bucket policy does not allow public access.",
+      "The index.html file is missing.",
+      "The S3 endpoint is not correct."
+    ],
+    "answer": "The bucket policy does not allow public access.",
+    "category": "Troubleshooting and Optimization",
+    "explanation": "Static website hosting on S3 requires a bucket policy that allows public read access to the content."
+  },
+  {
     "question": "A developer wants to monitor slow database queries in Amazon RDS. What tool should be enabled?",
     "options": [
       "Amazon CloudWatch Logs Insights",
@@ -443,40 +204,64 @@
     "explanation": "RDS Performance Insights provides detailed database performance metrics, including slow queries and wait events."
   },
   {
-    "question": "A Lambda function is running out of memory. What should a developer do to resolve this issue?",
+    "question": "What mechanism can a Lambda function use to assume a role for accessing other AWS services?",
     "options": [
-      "Increase the Lambda function timeout.",
-      "Use AWS X-Ray to trace the memory usage.",
-      "Increase the memory allocated to the function.",
-      "Move to an EC2 instance instead of Lambda."
+      "Environment variables",
+      "Static credentials",
+      "Lambda execution role",
+      "Custom policies"
     ],
-    "answer": "Increase the memory allocated to the function.",
-    "category": "Troubleshooting and Optimization",
-    "explanation": "Allocating more memory to a Lambda function not only provides more memory but also increases available CPU and network throughput."
+    "correctAnswer": "Lambda execution role",
+    "category": "Security",
+    "explanation": "The Lambda execution role allows the function to securely access other AWS resources."
   },
   {
-    "question": "A developer deployed a new version of a Lambda function, but CloudWatch logs show 'AccessDenied' errors when accessing S3. What should be checked?",
+    "question": "In DynamoDB, what is a partition key?",
     "options": [
-      "Check if the Lambda function was updated in the VPC.",
-      "Verify the S3 bucket policy for Lambda access.",
-      "Verify the Lambda function's IAM role has correct permissions.",
-      "Restart the Lambda function to refresh credentials."
+      "A field used for sorting results",
+      "A secondary index",
+      "The unique identifier used to distribute data",
+      "A reserved attribute name"
     ],
-    "answer": "Verify the Lambda function's IAM role has correct permissions.",
-    "category": "Troubleshooting and Optimization",
-    "explanation": "If the IAM role associated with the Lambda function does not have the necessary permissions, S3 access will be denied."
+    "correctAnswer": "The unique identifier used to distribute data",
+    "category": "Development with AWS Services",
+    "explanation": "The partition key determines the partition where the item is stored and must be unique if used alone."
   },
   {
-    "question": "An application using Amazon SQS is failing with 'ThrottlingException'. What should a developer do to address this?",
+    "question": "Which feature of DynamoDB helps reduce read latency for frequently accessed data?",
     "options": [
-      "Enable long polling on the SQS queue.",
-      "Reduce the number of message producers.",
-      "Switch to FIFO queue type.",
-      "Implement exponential backoff and retries."
+      "DAX (DynamoDB Accelerator)",
+      "Provisioned throughput",
+      "Auto Scaling",
+      "Global Tables"
     ],
-    "answer": "Implement exponential backoff and retries.",
-    "category": "Troubleshooting and Optimization",
-    "explanation": "Throttling can occur under high load; using exponential backoff is a recommended practice for handling such API errors."
+    "correctAnswer": "DAX (DynamoDB Accelerator)",
+    "category": "Development with AWS Services",
+    "explanation": "DAX is an in-memory caching service for DynamoDB that helps reduce read latency for frequently accessed data."
+  },
+  {
+    "question": "What is the main purpose of Multi-Factor Authentication (MFA) in AWS?",
+    "options": [
+      "To allow anonymous access",
+      "To enable SSH access",
+      "To increase security by requiring a second authentication factor",
+      "To reduce API call latency"
+    ],
+    "correctAnswer": "To increase security by requiring a second authentication factor",
+    "category": "Security",
+    "explanation": "MFA adds an additional layer of security by requiring a time-based one-time password (TOTP) in addition to a username and password."
+  },
+  {
+    "question": "Which AWS service is best suited to run event-driven code in response to changes in data within an S3 bucket?",
+    "options": [
+      "Amazon EC2",
+      "Amazon RDS",
+      "AWS Lambda",
+      "Amazon DynamoDB"
+    ],
+    "correctAnswer": "AWS Lambda",
+    "category": "Development with AWS Services",
+    "explanation": "AWS Lambda can be triggered by S3 events such as object creation or deletion, making it ideal for event-driven architectures."
   },
   {
     "question": "A developer using AWS SDKs is seeing a 'RequestLimitExceeded' error. What is the BEST way to handle this?",
@@ -491,6 +276,438 @@
     "explanation": "This error occurs when the request rate exceeds the default service quota. A quota increase is the proper resolution."
   },
   {
+    "question": "Which AWS service can automatically rollback a failed deployment?",
+    "options": [
+      "AWS CodePipeline",
+      "AWS Elastic Beanstalk",
+      "AWS CloudFormation",
+      "AWS CodeDeploy"
+    ],
+    "correctAnswer": "AWS CodeDeploy",
+    "category": "Deployment",
+    "explanation": "CodeDeploy can monitor deployment health and automatically roll back in case of failure."
+  },
+  {
+    "question": "What is one way to avoid duplicate processing in an event-driven application?",
+    "options": [
+      "Use EC2 instances instead of Lambda",
+      "Track processed events using a DynamoDB table",
+      "Disable retries",
+      "Use larger batch sizes"
+    ],
+    "correctAnswer": "Track processed events using a DynamoDB table",
+    "category": "Development with AWS Services",
+    "explanation": "Tracking processed events using a DynamoDB table with unique IDs helps ensure idempotency in event-driven applications."
+  },
+  {
+    "question": "How can application versions be managed in AWS Elastic Beanstalk?",
+    "options": [
+      "By using Lambda aliases",
+      "By using S3 buckets",
+      "By uploading and deploying new application versions",
+      "By using EC2 Auto Scaling policies"
+    ],
+    "correctAnswer": "By uploading and deploying new application versions",
+    "category": "Deployment",
+    "explanation": "Elastic Beanstalk allows you to upload new versions of your app and deploy them to environments as needed."
+  },
+  {
+    "question": "In AWS Lambda, what is a cold start?",
+    "options": [
+      "The time it takes to deploy a new function",
+      "The first invocation latency after a period of inactivity",
+      "The delay before a function returns a response",
+      "The backup process of Lambda logs"
+    ],
+    "correctAnswer": "The first invocation latency after a period of inactivity",
+    "category": "Development with AWS Services",
+    "explanation": "Cold starts refer to the latency introduced when Lambda initializes a new execution environment."
+  },
+  {
+    "question": "How can AWS SAM help in deploying serverless applications?",
+    "options": [
+      "It only builds static websites",
+      "It provisions only RDS instances",
+      "It simplifies definition and deployment of Lambda-based apps",
+      "It enables container orchestration"
+    ],
+    "correctAnswer": "It simplifies definition and deployment of Lambda-based apps",
+    "category": "Deployment",
+    "explanation": "AWS SAM provides a simplified syntax for expressing serverless resources and deploying them using the SAM CLI."
+  },
+  {
+    "question": "Which service integrates with GitHub to trigger builds and deployments automatically?",
+    "options": [
+      "Amazon EC2",
+      "AWS CodePipeline",
+      "Amazon CloudWatch",
+      "AWS IAM"
+    ],
+    "correctAnswer": "AWS CodePipeline",
+    "category": "Deployment",
+    "explanation": "CodePipeline can connect to GitHub to trigger builds and deployments when new commits are pushed."
+  },
+  {
+    "question": "A developer notices high latency in an Amazon API Gateway endpoint integrated with AWS Lambda. What should they check FIRST?",
+    "options": [
+      "Check if Lambda function has sufficient memory.",
+      "Check the API Gateway throttling settings.",
+      "Enable X-Ray tracing to analyze latency sources.",
+      "Update the Lambda timeout to a higher value."
+    ],
+    "answer": "Enable X-Ray tracing to analyze latency sources.",
+    "category": "Troubleshooting and Optimization",
+    "explanation": "AWS X-Ray helps identify which part of the request is causing latency, whether it's API Gateway, Lambda, or a downstream service."
+  },
+  {
+    "question": "Which AWS tool allows you to define your application and infrastructure in a single YAML template for serverless apps?",
+    "options": [
+      "AWS CloudFormation",
+      "AWS CodeDeploy",
+      "AWS SAM",
+      "AWS CodePipeline"
+    ],
+    "correctAnswer": "AWS SAM",
+    "category": "Deployment",
+    "explanation": "AWS SAM allows developers to define the serverless infrastructure and application logic in a single YAML template."
+  },
+  {
+    "question": "Which AWS SDK method allows an application to put an item into a DynamoDB table?",
+    "options": [
+      "putItem",
+      "getItem",
+      "scanTable",
+      "insertRow"
+    ],
+    "correctAnswer": "putItem",
+    "category": "Development with AWS Services",
+    "explanation": "`putItem` is the API call used to insert or update an item in a DynamoDB table."
+  },
+  {
+    "question": "What is the default consistency model for reads in Amazon DynamoDB?",
+    "options": [
+      "Strongly consistent",
+      "Eventually consistent",
+      "Causal consistency",
+      "Read-after-write consistency"
+    ],
+    "correctAnswer": "Eventually consistent",
+    "category": "Development with AWS Services",
+    "explanation": "By default, DynamoDB provides eventually consistent reads for better performance and scalability."
+  },
+  {
+    "question": "Which IAM entity is best used for granting short-term access to AWS resources?",
+    "options": [
+      "IAM Role",
+      "IAM Group",
+      "IAM User",
+      "IAM Policy"
+    ],
+    "correctAnswer": "IAM Role",
+    "category": "Security",
+    "explanation": "IAM roles are used to delegate access with temporary credentials, especially useful for federated users or services."
+  },
+  {
+    "question": "Which AWS service can be used to coordinate microservices in a serverless workflow?",
+    "options": [
+      "Amazon SWF",
+      "AWS Step Functions",
+      "Amazon SQS",
+      "AWS CloudFormation"
+    ],
+    "correctAnswer": "AWS Step Functions",
+    "category": "Development with AWS Services",
+    "explanation": "AWS Step Functions allow you to coordinate distributed applications and microservices using workflows."
+  },
+  {
+    "question": "Which AWS service allows secure storage of configuration data and secrets for EC2 and Lambda?",
+    "options": [
+      "Amazon S3",
+      "AWS Systems Manager Parameter Store",
+      "Amazon RDS",
+      "Amazon QuickSight"
+    ],
+    "correctAnswer": "AWS Systems Manager Parameter Store",
+    "category": "Security",
+    "explanation": "Parameter Store enables secure, hierarchical storage of configuration and secrets, with optional encryption."
+  },
+  {
+    "question": "An application running on AWS Lambda is experiencing timeouts when trying to access an Amazon RDS database. What is the MOST likely cause?",
+    "options": [
+      "The Lambda function is not in the same VPC as the RDS instance.",
+      "The RDS instance is not publicly accessible.",
+      "The Lambda function has reached its memory limit.",
+      "The IAM role for the Lambda function is missing permissions to connect to RDS."
+    ],
+    "answer": "The Lambda function is not in the same VPC as the RDS instance.",
+    "category": "Troubleshooting and Optimization",
+    "explanation": "If a Lambda function needs to access an RDS database in a private subnet, it must be configured to run in the same VPC with appropriate subnet and security group settings."
+  },
+  {
+    "question": "A developer's Lambda function frequently times out when querying a DynamoDB table. What optimization should be applied?",
+    "options": [
+      "Increase provisioned read throughput.",
+      "Use pagination to limit the amount of data retrieved.",
+      "Switch to strongly consistent reads.",
+      "Use DynamoDB Streams to retrieve data asynchronously."
+    ],
+    "answer": "Use pagination to limit the amount of data retrieved.",
+    "category": "Troubleshooting and Optimization",
+    "explanation": "Large queries on DynamoDB can take time. Using pagination reduces data size and prevents timeout errors."
+  },
+  {
+    "question": "Which type of API in API Gateway supports bidirectional communication?",
+    "options": [
+      "REST API",
+      "WebSocket API",
+      "HTTP API",
+      "GraphQL API"
+    ],
+    "correctAnswer": "WebSocket API",
+    "category": "Development with AWS Services",
+    "explanation": "WebSocket APIs support full-duplex communication channels, making them ideal for real-time use cases."
+  },
+  {
+    "question": "What happens if a Lambda function exceeds its timeout setting?",
+    "options": [
+      "It retries the execution",
+      "It throws a timeout exception",
+      "It continues to run in background",
+      "It automatically restarts"
+    ],
+    "correctAnswer": "It throws a timeout exception",
+    "category": "Development with AWS Services",
+    "explanation": "If a Lambda function exceeds its configured timeout, AWS terminates the function and throws a timeout exception."
+  },
+  {
+    "question": "How can you ensure that API Gateway endpoints require user authentication?",
+    "options": [
+      "Enable CORS",
+      "Attach a usage plan",
+      "Use Cognito User Pools authorizer",
+      "Enable CloudTrail logging"
+    ],
+    "correctAnswer": "Use Cognito User Pools authorizer",
+    "category": "Security",
+    "explanation": "API Gateway can integrate with Amazon Cognito User Pools to authenticate API requests."
+  },
+  {
+    "question": "A Lambda function is running out of memory. What should a developer do to resolve this issue?",
+    "options": [
+      "Increase the Lambda function timeout.",
+      "Use AWS X-Ray to trace the memory usage.",
+      "Increase the memory allocated to the function.",
+      "Move to an EC2 instance instead of Lambda."
+    ],
+    "answer": "Increase the memory allocated to the function.",
+    "category": "Troubleshooting and Optimization",
+    "explanation": "Allocating more memory to a Lambda function not only provides more memory but also increases available CPU and network throughput."
+  },
+  {
+    "question": "In AWS CodePipeline, what is a 'stage'?",
+    "options": [
+      "An IAM role",
+      "A type of Lambda function",
+      "A step in your release process",
+      "A version of your application"
+    ],
+    "correctAnswer": "A step in your release process",
+    "category": "Deployment",
+    "explanation": "A stage in CodePipeline represents a logical step in the CI/CD workflow, like source, build, test, or deploy."
+  },
+  {
+    "question": "What does the principle of least privilege mean?",
+    "options": [
+      "Users should be denied all access by default",
+      "Users should only be given permissions they need",
+      "Admin users should have all permissions",
+      "Roles should expire after 24 hours"
+    ],
+    "correctAnswer": "Users should only be given permissions they need",
+    "category": "Security",
+    "explanation": "The principle of least privilege helps reduce the attack surface by limiting access to only necessary permissions."
+  },
+  {
+    "question": "What is the role of AWS CodeBuild in a CI/CD pipeline?",
+    "options": [
+      "Manage IAM policies",
+      "Run build and test commands",
+      "Deploy applications",
+      "Provision infrastructure"
+    ],
+    "correctAnswer": "Run build and test commands",
+    "category": "Deployment",
+    "explanation": "CodeBuild compiles source code, runs tests, and produces artifacts for deployment."
+  },
+  {
+    "question": "How does exponential backoff help in designing fault-tolerant systems?",
+    "options": [
+      "By retrying immediately after failure",
+      "By retrying at increasing intervals to reduce the load on the system",
+      "By stopping retries after the first failure",
+      "By sending all retries at once"
+    ],
+    "correctAnswer": "By retrying at increasing intervals to reduce the load on the system",
+    "category": "Development with AWS Services",
+    "explanation": "Exponential backoff reduces the retry rate over time, helping avoid overloading systems during outages."
+  },
+  {
+    "question": "What is the benefit of using 'blue/green deployments' in AWS Elastic Beanstalk?",
+    "options": [
+      "Faster S3 uploads",
+      "Improved DNS resolution",
+      "Reduced deployment downtime",
+      "Lower EC2 costs"
+    ],
+    "correctAnswer": "Reduced deployment downtime",
+    "category": "Deployment",
+    "explanation": "Blue/green deployments help reduce downtime and risk by running two environments and switching traffic between them."
+  },
+  {
+    "question": "What is the purpose of a dead-letter queue (DLQ) in an AWS Lambda function?",
+    "options": [
+      "To increase the processing speed of Lambda",
+      "To temporarily store successfully processed messages",
+      "To store messages that failed processing for later analysis",
+      "To back up all Lambda invocations"
+    ],
+    "correctAnswer": "To store messages that failed processing for later analysis",
+    "category": "Development with AWS Services",
+    "explanation": "DLQs store failed events from services like Lambda or SQS, allowing developers to inspect and debug issues."
+  },
+  {
+    "question": "What is the primary purpose of AWS CloudFormation?",
+    "options": [
+      "Manage application versions",
+      "Write and run Lambda functions",
+      "Provision infrastructure as code",
+      "Host static websites"
+    ],
+    "correctAnswer": "Provision infrastructure as code",
+    "category": "Deployment",
+    "explanation": "AWS CloudFormation allows you to define and provision infrastructure using code templates."
+  },
+  {
+    "question": "Which AWS service provides user sign-up, sign-in, and access control for web and mobile apps?",
+    "options": [
+      "AWS IAM",
+      "Amazon Cognito",
+      "AWS SSO",
+      "AWS Shield"
+    ],
+    "correctAnswer": "Amazon Cognito",
+    "category": "Security",
+    "explanation": "Amazon Cognito provides authentication, authorization, and user management for web and mobile apps."
+  },
+  {
+    "question": "Which tool allows centralized auditing of all AWS account activity?",
+    "options": [
+      "AWS Config",
+      "AWS GuardDuty",
+      "AWS CloudTrail",
+      "AWS IAM"
+    ],
+    "correctAnswer": "AWS CloudTrail",
+    "category": "Security",
+    "explanation": "AWS CloudTrail records all API calls for auditing and monitoring purposes."
+  },
+  {
+    "question": "How can you reduce the latency of Lambda function initialization?",
+    "options": [
+      "Use a smaller deployment package",
+      "Increase memory allocation",
+      "Use provisioned concurrency",
+      "Add more environment variables"
+    ],
+    "correctAnswer": "Use provisioned concurrency",
+    "category": "Development with AWS Services",
+    "explanation": "Provisioned concurrency keeps Lambda functions initialized and ready to respond, reducing cold start latency."
+  },
+  {
+    "question": "Which format does AWS SAM use for defining serverless applications?",
+    "options": [
+      "JSON",
+      "TOML",
+      "YAML",
+      "INI"
+    ],
+    "correctAnswer": "YAML",
+    "category": "Deployment",
+    "explanation": "AWS SAM templates are typically written in YAML, which is more human-readable for defining serverless infrastructure."
+  },
+  {
+    "question": "How can developers securely store API keys in AWS?",
+    "options": [
+      "Store in plaintext in Lambda code",
+      "Use Amazon S3",
+      "Use AWS Secrets Manager",
+      "Store in a local config file"
+    ],
+    "correctAnswer": "Use AWS Secrets Manager",
+    "category": "Security",
+    "explanation": "AWS Secrets Manager is designed for securely storing and managing access to secrets such as API keys."
+  },
+  {
+    "question": "What is a common use case for Amazon S3 Event Notifications?",
+    "options": [
+      "To monitor EC2 usage",
+      "To trigger AWS Lambda functions",
+      "To deploy code",
+      "To configure IAM policies"
+    ],
+    "correctAnswer": "To trigger AWS Lambda functions",
+    "category": "Development with AWS Services",
+    "explanation": "S3 Event Notifications can be used to trigger AWS Lambda functions automatically upon object creation or deletion."
+  },
+  {
+    "question": "An application using Amazon SQS is failing with 'ThrottlingException'. What should a developer do to address this?",
+    "options": [
+      "Enable long polling on the SQS queue.",
+      "Reduce the number of message producers.",
+      "Switch to FIFO queue type.",
+      "Implement exponential backoff and retries."
+    ],
+    "answer": "Implement exponential backoff and retries.",
+    "category": "Troubleshooting and Optimization",
+    "explanation": "Throttling can occur under high load; using exponential backoff is a recommended practice for handling such API errors."
+  },
+  {
+    "question": "Which AWS service provides a fully managed NoSQL database with built-in support for key-value and document data models?",
+    "options": [
+      "Amazon Aurora",
+      "Amazon Redshift",
+      "Amazon DynamoDB",
+      "Amazon RDS"
+    ],
+    "correctAnswer": "Amazon DynamoDB",
+    "category": "Development with AWS Services",
+    "explanation": "Amazon DynamoDB is a fully managed NoSQL database service that supports key-value and document data structures."
+  },
+  {
+    "question": "What is the default behavior for IAM users in AWS?",
+    "options": [
+      "Full access to all services",
+      "No access until permissions are explicitly granted",
+      "Read-only access",
+      "Admin access to EC2"
+    ],
+    "correctAnswer": "No access until permissions are explicitly granted",
+    "category": "Security",
+    "explanation": "IAM users have no permissions by default. You must attach policies to grant access."
+  },
+  {
+    "question": "What is the primary function of Amazon API Gateway?",
+    "options": [
+      "To manage DynamoDB backups",
+      "To provision EC2 instances",
+      "To create and manage RESTful APIs",
+      "To perform object recognition in images"
+    ],
+    "correctAnswer": "To create and manage RESTful APIs",
+    "category": "Development with AWS Services",
+    "explanation": "Amazon API Gateway enables developers to create, publish, and manage RESTful and WebSocket APIs at any scale."
+  },
+  {
     "question": "An AWS Lambda function integrated with Amazon Kinesis is not processing records. What is the MOST likely reason?",
     "options": [
       "The Lambda function is not subscribed to the stream.",
@@ -503,15 +720,63 @@
     "explanation": "If the event source mapping is not correctly configured, Lambda will not receive records from Kinesis."
   },
   {
-    "question": "After deploying a new version of an API Gateway, users are seeing 'Internal Server Error' responses. What should be checked FIRST?",
+    "question": "A developer deployed a new version of a Lambda function, but CloudWatch logs show 'AccessDenied' errors when accessing S3. What should be checked?",
     "options": [
-      "Check if the stage deployment was successful.",
-      "Check the Lambda function permissions.",
-      "Enable caching on API Gateway.",
-      "Check the resource policy of the API."
+      "Check if the Lambda function was updated in the VPC.",
+      "Verify the S3 bucket policy for Lambda access.",
+      "Verify the Lambda function's IAM role has correct permissions.",
+      "Restart the Lambda function to refresh credentials."
     ],
-    "answer": "Check if the stage deployment was successful.",
+    "answer": "Verify the Lambda function's IAM role has correct permissions.",
     "category": "Troubleshooting and Optimization",
-    "explanation": "A common issue is forgetting to deploy the new stage version after updating the API. Without deployment, the new configuration isn’t live."
+    "explanation": "If the IAM role associated with the Lambda function does not have the necessary permissions, S3 access will be denied."
+  },
+  {
+    "question": "Which AWS service provides a platform to deploy and manage applications without having to manage the underlying infrastructure?",
+    "options": [
+      "AWS CloudFormation",
+      "AWS CodePipeline",
+      "AWS Elastic Beanstalk",
+      "AWS SAM"
+    ],
+    "correctAnswer": "AWS Elastic Beanstalk",
+    "category": "Deployment",
+    "explanation": "AWS Elastic Beanstalk abstracts the infrastructure layer and lets developers deploy applications quickly using supported platforms."
+  },
+  {
+    "question": "Which AWS service helps in managing infrastructure using declarative templates?",
+    "options": [
+      "AWS Elastic Beanstalk",
+      "AWS CodeBuild",
+      "AWS CloudFormation",
+      "Amazon EC2"
+    ],
+    "correctAnswer": "AWS CloudFormation",
+    "category": "Deployment",
+    "explanation": "CloudFormation uses templates to define and provision AWS infrastructure in a consistent and repeatable way."
+  },
+  {
+    "question": "Which AWS service is best suited for building CI/CD pipelines?",
+    "options": [
+      "AWS CodeDeploy",
+      "AWS CloudFormation",
+      "AWS CodePipeline",
+      "AWS Elastic Beanstalk"
+    ],
+    "correctAnswer": "AWS CodePipeline",
+    "category": "Deployment",
+    "explanation": "AWS CodePipeline helps you build, test, and deploy your code every time there is a code change."
+  },
+  {
+    "question": "Which feature of IAM allows you to restrict access based on IP addresses or request times?",
+    "options": [
+      "Actions",
+      "Resources",
+      "Policy Conditions",
+      "Policy Effects"
+    ],
+    "correctAnswer": "Policy Conditions",
+    "category": "Security",
+    "explanation": "Policy conditions let you control access based on factors like IP address, date, and MFA status."
   }
 ]
